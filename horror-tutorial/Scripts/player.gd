@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var ORIGINAL_SPEED
-var SPEED = 3.0
+var SPEED = 5.0
 var SPRINT_SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 var sprint_slider

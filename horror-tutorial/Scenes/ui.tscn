@@ -16,10 +16,10 @@ grow_vertical = 2
 
 [node name="sprint_slider" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 260.0
-offset_right = 551.0
-offset_bottom = 276.0
+offset_left = 573.0
+offset_top = 761.0
+offset_right = 886.0
+offset_bottom = 777.0
 theme_override_icons/grabber = SubResource("ImageTexture_wviqb")
 max_value = 1.0
 step = 0.0

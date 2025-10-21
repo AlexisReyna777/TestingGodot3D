@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp18r6hl678wk"]
+
+[ext_resource type="Material" uid="uid://bwweop4c0q8i6" path="res://Materials/flashlight.tres" id="1_b7iud"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sjulo"]
+radial_segments = 16
+
+[node name="Flaslight" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.79772675, 0, 0, 0, -5.5959923e-08, -0.80419415, 0, 1.2802138, -3.5152443e-08, 0, 0, 0)
+material_override = ExtResource("1_b7iud")
+mesh = SubResource("CylinderMesh_sjulo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.3625532, 0, 0, 0, -1.6139264e-08, -1.3898988, 0, 0.36922333, -6.075441e-08, 0, 0, -1.578097)
+material_override = ExtResource("1_b7iud")
+mesh = SubResource("CylinderMesh_sjulo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0900426, 0, 0, 0, -1.0925569e-09, -1.111919, 0, 0.02499479, -4.860353e-08, 0, 0, -1.9597723)
+mesh = SubResource("CylinderMesh_sjulo")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bekork8sbppmp"]
+
+[ext_resource type="Material" uid="uid://b8sictrhp5s5m" path="res://Materials/ligth.tres" id="1_33t56"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fvgy5"]
+
+[node name="ligth" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_33t56")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_fvgy5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+shadow_enabled = true
