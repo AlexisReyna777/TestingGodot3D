@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1efy3bugx5pc"]
+[gd_scene load_steps=14 format=3 uid="uid://b1efy3bugx5pc"]
 
 [ext_resource type="PackedScene" uid="uid://ba7mbxsvqkvqv" path="res://Scenes/ui.tscn" id="1_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://ddlfejsb3mhkp" path="res://Scenes/player.tscn" id="1_tumq0"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bekork8sbppmp" path="res://Scenes/ligth.tscn" id="3_0f350"]
 [ext_resource type="Material" uid="uid://cjgiybb6ggxc" path="res://Materials/walls.tres" id="3_wqkje"]
 [ext_resource type="PackedScene" uid="uid://dop7foya2luw6" path="res://Scenes/table.tscn" id="6_0f350"]
+[ext_resource type="PackedScene" uid="uid://bp18r6hl678wk" path="res://Scenes/flaslight.tscn" id="7_8c0lf"]
+[ext_resource type="AudioStream" uid="uid://b5s6gpop8hdv7" path="res://Sounds/ambience_terror.mp3" id="8_754fn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_51e2h"]
 sky_top_color = Color(0.9960734, 0.7095269, 0.50027436, 1)
@@ -42,9 +44,6 @@ shadow_bias = 0.0
 [node name="Player" parent="." instance=ExtResource("1_tumq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.205578, 1.804944, 80.12475)
 
-[node name="ligth" parent="." instance=ExtResource("3_0f350")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.019312, 8.048571, 65.333786)
-
 [node name="floor" type="StaticBody3D" parent="."]
 transform = Transform3D(41.344185, 0, 0, 0, 1, 0, 0, 0, 55.735077, 0, 0, 0)
 
@@ -69,9 +68,6 @@ shape = SubResource("BoxShape3D_51e2h")
 transform = Transform3D(2.4417248, 0, 0, 0, 1, 0, 0, 0, 3.0899599, 0, 0, 0)
 material_override = ExtResource("2_81xng")
 mesh = SubResource("BoxMesh_tumq0")
-
-[node name="ligth" parent="top" instance=ExtResource("3_0f350")]
-transform = Transform3D(0.0241872, 0, 0, 0, 1, 0, 0, 0, 0.017942023, -0.3306113, -15.043304, 1.1461594)
 
 [node name="box" type="StaticBody3D" parent="."]
 transform = Transform3D(10.589432, 0, 0, 0, 15.513708, 0, 0, 0, 8.825885, 15.346447, 8.7076, 70.58655)
@@ -195,3 +191,16 @@ mesh = SubResource("BoxMesh_tumq0")
 
 [node name="Table" parent="." instance=ExtResource("6_0f350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.11316, 1.0113685, 64.4709)
+
+[node name="Flaslight" parent="." instance=ExtResource("7_8c0lf")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, -12.823387, 1.6305315, 64.57737)
+
+[node name="ambience_sounds" type="Node3D" parent="."]
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="ambience_sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 43.931213, 0)
+stream = ExtResource("8_754fn")
+autoplay = true
+
+[node name="ligth" parent="." instance=ExtResource("3_0f350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.871935, 3.712288, 64.20621)
